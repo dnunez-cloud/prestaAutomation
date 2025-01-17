@@ -4,17 +4,21 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "dotenv": "^16.4.5",
+    "dotenv": "^16.4.7",
     "playwright": "^1.49.1",
     "playwright-core": "^1.36.2"
   },
   "devDependencies": {
     "@playwright/test": "^1.48.1",
-    "@types/node": "^22.7.6"
+    "@types/node": "^22.7.6",
+    "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "@typescript-eslint/parser": "^8.20.0",
+    "eslint": "^9.18.0"
   },
   "scripts": {
-    "authLogin": "node authLogin.js",
-    "homeTest": "npx playwright test homeNavigation.spec.ts"
+    "homeTest": "npx playwright test homeNavigation.spec.ts",
+    "createAccountTest": "npx playwright test createAccount.spec.ts",
+    "contactTest": "npx playwright test contactForm.spec.ts"
   },
   "keywords": [],
   "author": "",

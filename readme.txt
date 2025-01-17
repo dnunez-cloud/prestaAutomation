@@ -11,4 +11,4 @@ PageObject is structured with sections as pages
 Locators and Data folders are at the same level as the page objects files
 
 The .env file has to be filled with real data such as urls
-
+To run automated tests, shortcuts are written on package.json file, scripts section
