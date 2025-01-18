@@ -42,5 +42,4 @@ test.describe('submit order tests', () => {
     const messageShown = await checkoutPage.zeroItemMessage();
     expect(messageShown).toBeTruthy();
   });
-
 });

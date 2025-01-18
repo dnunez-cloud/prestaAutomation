@@ -16,11 +16,12 @@
     "eslint": "^9.18.0"
   },
   "scripts": {
-    "homeTest": "npx playwright test homeNavigation.spec.ts",
-    "createAccountTest": "npx playwright test createAccount.spec.ts",
-    "contactTest": "npx playwright test contactForm.spec.ts",
-    "newsletterTest": "npx playwright test singUpNewsletter.spec.ts",
-    "addProductsTest": "npx playwright test e2eSubmitOrder.spec.ts"
+    "openReport": "npx open-cli html-reports/index.html",
+    "homeTest": "cross-env TEST_FILE_PATH=test/homeNavigation npx playwright test homeNavigation.spec.ts",
+    "createAccountTest": "cross-env TEST_FILE_PATH=test/createAccount  npx playwright test createAccount.spec.ts",
+    "contactTest": "cross-env TEST_FILE_PATH=test/contactForm  npx playwright test contactForm.spec.ts",
+    "newsletterTest": "cross-env TEST_FILE_PATH=test/singUpNewsletter  npx playwright test singUpNewsletter.spec.ts",
+    "addProductsTest": "cross-env TEST_FILE_PATH=test/e2eSubmitOrder  npx playwright test e2eSubmitOrder.spec.ts"
   },
   "keywords": [],
   "author": "",
