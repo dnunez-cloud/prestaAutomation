@@ -26,8 +26,15 @@ export class HomePage extends HomeLocators{
     await this.page.goto(URLS.PRESTAURL);
   }
 
-  async gotoAccountSection(){
-    await this.createAccountLink.waitFor({ state: 'visible'});
-    await this.createAccountLink.click();
+  async clickSignInButton() {
+    await this.signinButton.click();
+  }
+
+  async selectSingleProduct(item: string) {
+    await this.getProduct(item).click();
+  }
+
+  async selectProduct() {
+    await this.product1.click();
   }
 }
