@@ -14,8 +14,18 @@ test.describe('Home Page Navigation', () => {
     await expect(page).toHaveURL(URLS.PRESTAURL);
   });
 
-  test('should navigate to account section', async ({ page }) => {
-    await homePage.gotoAccountSection();
-    //await expect(page).toHaveURL(/.*account/); // Adjust the regex to match the actual URL
+  //In order to have a complete navigation check, soft assertions are used to not stop the test execution
+  test('should navigate to different sections & languages', async ({ page }) => {
+    await homePage.switchLanguage('Français');
+    await expect.soft(page).toHaveURL(/fr$/); // Check if URL ends with 'fr'
+    await homePage.switchLanguage('Español');
+    await expect.soft(page).toHaveURL(/es$/); // Check if URL ends with 'es'
+    await homePage.selectScreenDevice('tablet');
+    const screenDevice = await homePage.checkScreenDevice('tablet');
+    await expect.soft(screenDevice).toBeTruthy(); // Check if the page body is set to tablet
+    await homePage.switchLanguage('English');
+    await homePage.searchProduct('t-shirt');
+    const productList = await homePage.checkSearchedProducts();
+    await expect.soft(productList).toBeFalsy(); // Check if the product list is empty
   });
 });

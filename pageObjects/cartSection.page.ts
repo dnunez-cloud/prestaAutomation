@@ -13,8 +13,15 @@ export class CartPage extends CartLocators{
     await this.productQuantityInput.fill(quantity);
   }
 
-  async deleteProduct() {
-    await this.deleteButton.click();
+  async deleteProduct(itemNumber: string) {
+    const deleteIcon = getDeleteIcon(itemNumber).waitFor({ state: 'visible'});
+    await this.deleteIcon.click();
+  }
+
+  async changeQuantitySingleProduct(itemNumber: string, quantity: string) {
+    const quantityInput = getQuantityInput(itemNumber).waitFor({ state: 'visible'});
+    await this.quantityInput.click();
+    await this.quantityInput.fill(quantity);
   }
 
   async proceedToCheckout() {

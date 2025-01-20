@@ -13,4 +13,19 @@ export class ProductPage extends ProductLocators{
     await this.addToCartButton.click();
     await this.proceedToCheckoutButton.click();
   }
+
+  async addAndContinueShopping() {
+    await this.addToCartButton.click();
+    await this.continueShoppingButton.click();
+    await this.backToHomeButton.click();
+  }
+
+  async changeProductQuantity(quantity: string) {
+    await this.productQuantityInput.fill(quantity);
+    await this.addToCartButton.click();
+  }
+
+  async checkStockMessage() {
+    return await this.notEnoughStockAlert.isVisible();
+  }
 }

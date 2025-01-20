@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "dotenv": "^16.4.7",
+    "newman-reporter-html": "^1.0.5",
     "playwright": "^1.49.1",
     "playwright-core": "^1.36.2"
   },
@@ -13,6 +14,7 @@
     "@types/node": "^22.7.6",
     "@typescript-eslint/eslint-plugin": "^8.20.0",
     "@typescript-eslint/parser": "^8.20.0",
+    "cross-env": "^7.0.3",
     "eslint": "^9.18.0"
   },
   "scripts": {
@@ -21,7 +23,8 @@
     "createAccountTest": "cross-env TEST_FILE_PATH=test/createAccount  npx playwright test createAccount.spec.ts",
     "contactTest": "cross-env TEST_FILE_PATH=test/contactForm  npx playwright test contactForm.spec.ts",
     "newsletterTest": "cross-env TEST_FILE_PATH=test/singUpNewsletter  npx playwright test singUpNewsletter.spec.ts",
-    "addProductsTest": "cross-env TEST_FILE_PATH=test/e2eSubmitOrder  npx playwright test e2eSubmitOrder.spec.ts"
+    "submitOrderTest": "cross-env TEST_FILE_PATH=test/submitOrder  npx playwright test submitOrder.spec.ts",
+    "runApiTest": "newman run ./postmanApiCollection/contactUsAPI-PrestaWorkshop.postman_collection.json -r html"
   },
   "keywords": [],
   "author": "",

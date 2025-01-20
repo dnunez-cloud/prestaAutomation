@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "b3f7bf81-009f-4c36-9880-4d8e6422bc3f",
+		"name": "ContactUsAPI-PrestaWorkshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24640181"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"subject\": \"Customer Service\",\r\n  \"email\": \"johndoe@example.com\",\r\n  \"message\": \"This is a test message.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demo.prestashop.com/en/contact-us",
+					"protocol": "https",
+					"host": [
+						"demo",
+						"prestashop",
+						"com"
+					],
+					"path": [
+						"en",
+						"contact-us"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

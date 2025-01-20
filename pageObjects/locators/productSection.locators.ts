@@ -7,6 +7,8 @@ export class ProductLocators {
   readonly continueShoppingButton  :Locator;
   readonly proceedToCheckoutButton :Locator;
   readonly productQuantityInput    :Locator;
+  readonly backToHomeButton        :Locator;
+  readonly notEnoughStockAlert     :Locator;
   
   constructor(page: Page) {
     this.page                    = page;
@@ -15,6 +17,8 @@ export class ProductLocators {
     this.continueShoppingButton  = page.locator('span[title="Continue shopping"]');
     this.proceedToCheckoutButton = page.locator('a[title="Proceed to checkout"]');
     this.productQuantityInput    = page.locator('input[name="qty"]');
+    this.backToHomeButton        = page.locator('a').filter({hasText: ' Home '});
+    this.notEnoughStockAlert     = page.locator('span[id="product-availability"]').filter({hasText: ' Product successfully added to your shopping cart '});
   }
 
   getProduct(item: string) {

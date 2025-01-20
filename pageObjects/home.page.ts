@@ -37,4 +37,27 @@ export class HomePage extends HomeLocators{
   async selectProduct() {
     await this.product1.click();
   }
+
+  async switchLanguage(language: string) {
+    await this.languageSelect.selectOption(language);
+  }
+
+  async selectScreenDevice(device: string) {
+    await this.getScreenDeviceIcon(device).click();
+  }
+
+  async checkScreenDevice(device: string) {
+    const screenDevice = await this.frameContainer.getAttribute('class');
+    return screenDevice;
+  }
+
+  async searchProduct(product: string) {
+    await this.searchBar.fill(product);
+    await this.searchBar.press('Enter');
+  }
+
+  async checkSearchedProducts() {
+    const productList = await this.noProductFound.isVisible();
+    return productList;
+  }
 }
